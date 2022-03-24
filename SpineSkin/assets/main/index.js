@@ -1,20 +1,898 @@
-System.register("chunks:///_virtual/SpineAttach.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var e,i,n,a,o,l,c,s,r,h,u,p;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,n=t.initializerDefineProperty,a=t.assertThisInitialized,o=t.defineProperty},function(t){l=t.cclegacy,c=t._decorator,s=t.sp,r=t.Node,h=t.Label,u=t.Button,p=t.Component}],execute:function(){var k,b,f,d,y,m,S,A,g,L,v;l._RF.push({},"1f4fb/2fX9O26fHciliNUu8","SpineAttach",void 0);var C=c.ccclass,M=c.property;t("default",(k=C("SpineAttach"),b=M({type:s.Skeleton}),f=M({type:r}),d=M({type:h}),y=M({type:u}),k((A=e((S=function(t){function e(){for(var e,i=arguments.length,l=new Array(i),c=0;c<i;c++)l[c]=arguments[c];return e=t.call.apply(t,[this].concat(l))||this,n(a(e),"skeleton",A,a(e)),n(a(e),"attachNode",g,a(e)),n(a(e),"modeLabel",L,a(e)),n(a(e),"attachBtn",v,a(e)),o(a(e),"backSockets",null),e}i(e,t);var l=e.prototype;return l.onLoad=function(){var t=new s.SpineSocket("root/hip/tail1/tail2/tail3/tail4/tail5/tail6/tail7/tail8/tail9/tail10",this.attachNode);this.skeleton.sockets.push(t),this.skeleton.sockets=this.skeleton.sockets},l.changeAttach=function(){this.backSockets?(this.skeleton.sockets=this.backSockets,this.backSockets=null):(this.backSockets=this.skeleton.sockets,this.skeleton.sockets=[])},l.changeMode=function(){this.skeleton.isAnimationCached()?(this.skeleton.setAnimationCacheMode(s.Skeleton.AnimationCacheMode.REALTIME),this.modeLabel.string="realtime",this.attachBtn.interactable=!0):(this.skeleton.setAnimationCacheMode(s.Skeleton.AnimationCacheMode.SHARED_CACHE),this.modeLabel.string="cache",this.attachBtn.interactable=!1)},e}(p)).prototype,"skeleton",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),g=e(S.prototype,"attachNode",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=e(S.prototype,"modeLabel",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=e(S.prototype,"attachBtn",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),m=S))||m));l._RF.pop()}}}));
+System.register("chunks:///_virtual/SpineAttach.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
 
-System.register("chunks:///_virtual/SpineSkin.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(n){"use strict";var e,i,t,r,s,o,p,c,l;return{setters:[function(n){e=n.applyDecoratedDescriptor,i=n.inheritsLoose,t=n.initializerDefineProperty,r=n.assertThisInitialized,s=n.defineProperty},function(n){o=n.cclegacy,p=n._decorator,c=n.sp,l=n.Component}],execute:function(){var a,u,f,h,g;o._RF.push({},"3f265FzgzJO6pzW2KvpATcO","SpineSkin",void 0);var k=p.ccclass,y=p.property;n("SpineSkin",(a=k("SpineSkin"),u=y({type:c.Skeleton}),a((g=e((h=function(n){function e(){for(var e,i=arguments.length,o=new Array(i),p=0;p<i;p++)o[p]=arguments[p];return e=n.call.apply(n,[this].concat(o))||this,t(r(e),"spine",g,r(e)),s(r(e),"skinId",0),e}i(e,n);var o=e.prototype;return o.start=function(){},o.change=function(){var n=["girl","boy","girl-blue-cape","girl-spring-dress"].map((function(n){return"full-skins/"+n}));this.skinId=(this.skinId+1)%n.length,this.spine.setSkin(n[this.skinId])},e}(l)).prototype,"spine",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),f=h))||f));o._RF.pop()}}}));
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, sp, Node, Label, Button, Component;
 
-System.register("chunks:///_virtual/SpineMeshEffect.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var t,i,r,s,n,f,c,o,h,l;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,r=e.initializerDefineProperty,s=e.assertThisInitialized,n=e.defineProperty},function(e){f=e.cclegacy,c=e._decorator,o=e.sp,h=e.Size,l=e.Component}],execute:function(){var a,u,_,d,p;f._RF.push({},"57b56AV9fFA5brJJCNWOURt","SpineMeshEffect",void 0);var w=c.ccclass,E=c.property;e("default",(a=w("SpineMeshEffect"),u=E({type:o.Skeleton}),a((p=t((d=function(e){function t(){for(var t,i=arguments.length,f=new Array(i),c=0;c<i;c++)f[c]=arguments[c];return t=e.call.apply(e,[this].concat(f))||this,r(s(t),"skeleton",p,s(t)),n(s(t),"_swirlTime",0),n(s(t),"_maxEffect",0),n(s(t),"_index",0),n(s(t),"_bound",void 0),n(s(t),"_swirlEffect",void 0),n(s(t),"_jitterEffect",void 0),t}i(t,e);var f=t.prototype;return f.start=function(){this._swirlTime=0,this._maxEffect=3,this._index=0;var e=this.skeleton.node._uiProps.uiTransformComp;this._bound=new h(e.width,e.height),this._swirlEffect=new o.VertexEffectDelegate,this._swirlEffect.initSwirlWithPowOut(0,2),this._jitterEffect=new o.VertexEffectDelegate,this._jitterEffect.initJitter(20,20)},f.switchEffect=function(){switch(this._index++,this._index>=this._maxEffect&&(this._index=0),this._index){case 0:this.skeleton.setVertexEffectDelegate(null);break;case 1:this.skeleton.setVertexEffectDelegate(this._jitterEffect);break;case 2:this.skeleton.setVertexEffectDelegate(this._swirlEffect)}},f.update=function(e){if(2==this._index){this._swirlTime+=e;var t=this._swirlTime%2;t>1&&(t=1-(t-1));var i=this._bound,r=this._swirlEffect.getSwirlVertexEffect();r.angle=360*t,r.centerX=.5*i.width,r.centerY=.5*i.height,r.radius=t*Math.sqrt(i.width*i.width+i.height*i.height)}},t}(l)).prototype,"skeleton",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=d))||_));f._RF.pop()}}}));
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      sp = module.sp;
+      Node = module.Node;
+      Label = module.Label;
+      Button = module.Button;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class2, _class3, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
 
-System.register("chunks:///_virtual/SpineBoyCtrl.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(i){"use strict";var t,n,e,s,o,a;return{setters:[function(i){t=i.inheritsLoose,n=i.defineProperty,e=i.assertThisInitialized},function(i){s=i.cclegacy,o=i._decorator,a=i.Component}],execute:function(){var l;s._RF.push({},"63fd6NWWQxCt6fDTJtglY8d","SpineBoyCtrl",void 0);var r=o.ccclass;o.property,i("default",r("SpineBoyCtrl")(l=function(i){function s(){for(var t,s=arguments.length,o=new Array(s),a=0;a<s;a++)o[a]=arguments[a];return t=i.call.apply(i,[this].concat(o))||this,n(e(t),"mixTime",.2),n(e(t),"spine",void 0),n(e(t),"_hasStop",!0),t}t(s,i);var o=s.prototype;return o.onLoad=function(){var i=this,t=this.spine=this.getComponent("sp.Skeleton");this._setMix("walk","run"),this._setMix("run","jump"),this._setMix("walk","jump"),t.setStartListener((function(i){var t=i.animation?i.animation.name:"";console.log("[track %s][animation %s] start.",i.trackIndex,t)})),t.setInterruptListener((function(i){var t=i.animation?i.animation.name:"";console.log("[track %s][animation %s] interrupt.",i.trackIndex,t)})),t.setEndListener((function(i){var t=i.animation?i.animation.name:"";console.log("[track %s][animation %s] end.",i.trackIndex,t)})),t.setDisposeListener((function(i){var t=i.animation?i.animation.name:"";console.log("[track %s][animation %s] will be disposed.",i.trackIndex,t)})),t.setCompleteListener((function(t){var n=t.animation?t.animation.name:"";"shoot"===n&&i.spine.clearTrack(1);var e=Math.floor(t.trackTime/t.animationEnd);console.log("[track %s][animation %s] complete: %s",t.trackIndex,n,e)})),t.setEventListener((function(i,t){var n=i.animation?i.animation.name:"";console.log("[track %s][animation %s] event: %s, %s, %s, %s",i.trackIndex,n,t.data.name,t.intValue,t.floatValue,t.stringValue)})),this._hasStop=!1},o.toggleDebugSlots=function(){var i;this.spine.debugSlots=!(null===(i=this.spine)||void 0===i?void 0:i.debugSlots)},o.toggleDebugBones=function(){var i;this.spine.debugBones=!(null===(i=this.spine)||void 0===i?void 0:i.debugBones)},o.toggleDebugMesh=function(){var i;this.spine.debugMesh=!(null===(i=this.spine)||void 0===i?void 0:i.debugMesh)},o.toggleUseTint=function(){var i;this.spine.useTint=!(null===(i=this.spine)||void 0===i?void 0:i.useTint)},o.toggleTimeScale=function(){1===this.spine.timeScale?this.spine.timeScale=.3:this.spine.timeScale=1},o.stop=function(){var i;null===(i=this.spine)||void 0===i||i.clearTrack(0),this._hasStop=!0},o.walk=function(){var i,t;this._hasStop&&(null===(t=this.spine)||void 0===t||t.setToSetupPose());null===(i=this.spine)||void 0===i||i.setAnimation(0,"walk",!0),this._hasStop=!1},o.run=function(){var i,t;this._hasStop&&(null===(t=this.spine)||void 0===t||t.setToSetupPose());null===(i=this.spine)||void 0===i||i.setAnimation(0,"run",!0),this._hasStop=!1},o.jump=function(){var i,t;this._hasStop&&(null===(t=this.spine)||void 0===t||t.setToSetupPose());null===(i=this.spine)||void 0===i||i.setAnimation(0,"jump",!0),this._hasStop=!1},o.shoot=function(){var i;null===(i=this.spine)||void 0===i||i.setAnimation(1,"shoot",!1)},o.idle=function(){var i,t;null===(i=this.spine)||void 0===i||i.setToSetupPose(),null===(t=this.spine)||void 0===t||t.setAnimation(0,"idle",!0)},o.portal=function(){var i,t;null===(i=this.spine)||void 0===i||i.setToSetupPose(),null===(t=this.spine)||void 0===t||t.setAnimation(0,"portal",!1)},o._setMix=function(i,t){var n,e;null===(n=this.spine)||void 0===n||n.setMix(i,t,this.mixTime),null===(e=this.spine)||void 0===e||e.setMix(t,i,this.mixTime)},s}(a))||l);s._RF.pop()}}}));
+      cclegacy._RF.push({}, "1f4fb/2fX9O26fHciliNUu8", "SpineAttach", undefined);
 
-System.register("chunks:///_virtual/SpineSkin-single.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var n,i,t,s,r,o,l,c,a;return{setters:[function(e){n=e.applyDecoratedDescriptor,i=e.inheritsLoose,t=e.initializerDefineProperty,s=e.assertThisInitialized,r=e.defineProperty},function(e){o=e.cclegacy,l=e._decorator,c=e.sp,a=e.Component}],execute:function(){var p,u,h,k,f;o._RF.push({},"7e308Jc1K9G350X533SJ0Y1","SpineSkin-single",void 0);var g=l.ccclass,S=l.property;e("SpineSkin",(p=g("SpineSkin-single"),u=S({type:c.Skeleton}),p((f=n((k=function(e){function n(){for(var n,i=arguments.length,o=new Array(i),l=0;l<i;l++)o[l]=arguments[l];return n=e.call.apply(e,[this].concat(o))||this,t(s(n),"spine",f,s(n)),r(s(n),"skinId",0),n}i(n,e);var o=n.prototype;return o.start=function(){},o.change=function(){var e=this.spine.skeletonData.skeletonJson.skins;console.log(e),this.skinId=(this.skinId+1)%e.length,console.log(e[this.skinId].name),this.spine.setSkin(e[this.skinId].name)},n}(a)).prototype,"spine",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),h=k))||h));o._RF.pop()}}}));
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
 
-System.register("chunks:///_virtual/SpineSkin-anim.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var n,i,t,r,a,o,s,c,p;return{setters:[function(e){n=e.applyDecoratedDescriptor,i=e.inheritsLoose,t=e.initializerDefineProperty,r=e.assertThisInitialized,a=e.defineProperty},function(e){o=e.cclegacy,s=e._decorator,c=e.sp,p=e.Component}],execute:function(){var l,u,f,h,m;o._RF.push({},"84eb3Re2ltJOKveY+6MrNqB","SpineSkin-anim",void 0);var y=s.ccclass,S=s.property;e("SpineSkin",(l=y("SpineSkin-anim"),u=S({type:c.Skeleton}),l((m=n((h=function(e){function n(){for(var n,i=arguments.length,o=new Array(i),s=0;s<i;s++)o[s]=arguments[s];return n=e.call.apply(e,[this].concat(o))||this,t(r(n),"spine",m,r(n)),a(r(n),"animID",0),n}i(n,e);var o=n.prototype;return o.start=function(){},o.change=function(){var e=["aware","blink","dance","dress-up","idle","walk"];this.animID=(this.animID+1)%e.length,this.spine.setAnimation(0,e[this.animID],!0)},n}(p)).prototype,"spine",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),f=h))||f));o._RF.pop()}}}));
+      var _class = exports('default', (_dec = ccclass('SpineAttach'), _dec2 = property({
+        type: sp.Skeleton
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Label
+      }), _dec5 = property({
+        type: Button
+      }), _dec(_class2 = (_class3 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(_class3, _Component);
 
-System.register("chunks:///_virtual/LoadSpine.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var t,n,i,r,o,a,s,l,p,c;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,s=e.Label,l=e.loader,p=e.sp,c=e.Component}],execute:function(){var u,f,d,y,g;o._RF.push({},"c17afOJ5PBHxIigUOVBfvPh","LoadSpine",void 0);var h=a.ccclass,v=a.property;e("LoadSpine",(u=h("LoadSpine"),f=v({type:s}),u((g=t((y=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),a=0;a<n;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,i(r(t),"tips",g,r(t)),t}return n(t,e),t.prototype.start=function(){var e=this;l.loadRes("spine/alien/alien-pro",p.SkeletonData,(function(t,n){if(t)e.tips.string="Failed to load asset";else{var i=e.getComponent("sp.Skeleton");i.skeletonData=n;i.setAnimation(0,"run",!0);e.tips.string="Load Success"}}))},t}(c)).prototype,"tips",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),d=y))||d));o._RF.pop()}}}));
+        function _class3() {
+          var _this;
 
-System.register("chunks:///_virtual/SpineCollider.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var n,e,o,i,a,s,c,r,u,l,d;return{setters:[function(t){n=t.inheritsLoose,e=t.defineProperty,o=t.assertThisInitialized},function(t){i=t.cclegacy,a=t._decorator,s=t.PhysicsSystem2D,c=t.Contact2DType,r=t.EPhysics2DDrawFlags,u=t.Sprite,l=t.Color,d=t.Component}],execute:function(){var h;i._RF.push({},"dc74fi10upIPZ9ydQe0eazG","SpineCollider",void 0);var g=a.ccclass;t("SpineCollider",g("SpineCollider")(h=function(t){function i(){for(var n,i=arguments.length,a=new Array(i),s=0;s<i;s++)a[s]=arguments[s];return n=t.call.apply(t,[this].concat(a))||this,e(o(n),"touchingCountMap",new Map),e(o(n),"debugDrawFlags",0),n}n(i,t);var a=i.prototype;return a.start=function(){s.instance.on(c.BEGIN_CONTACT,this.onBeginContact,this),s.instance.on(c.END_CONTACT,this.onEndContact,this),this.debugDrawFlags=s.instance.debugDrawFlags},a.onEnable=function(){s.instance.debugDrawFlags=this.debugDrawFlags|r.Shape},a.onDisable=function(){s.instance.debugDrawFlags=this.debugDrawFlags},a.addContact=function(t){var n=this.touchingCountMap.get(t.node)||0;this.touchingCountMap.set(t.node,++n);var e=t.getComponent(u);e&&(e.color=l.RED)},a.removeContact=function(t){var n=this.touchingCountMap.get(t.node)||0;if(--n<=0){this.touchingCountMap.delete(t.node);var e=t.getComponent(u);e&&(e.color=l.WHITE)}else this.touchingCountMap.set(t.node,n)},a.onBeginContact=function(t,n){this.addContact(t),this.addContact(n)},a.onEndContact=function(t,n){this.removeContact(t),this.removeContact(n)},i}(d))||h);i._RF.pop()}}}));
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
 
-System.register("chunks:///_virtual/main",["./SpineAttach.ts","./SpineSkin.ts","./SpineMeshEffect.ts","./SpineBoyCtrl.ts","./SpineSkin-single.ts","./SpineSkin-anim.ts","./LoadSpine.ts","./SpineCollider.ts"],(function(){"use strict";return{setters:[null,null,null,null,null,null,null,null],execute:function(){}}}));
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "skeleton", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "attachNode", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "modeLabel", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "attachBtn", _descriptor4, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "backSockets", null);
+
+          return _this;
+        }
+
+        var _proto = _class3.prototype;
+
+        _proto.onLoad = function onLoad() {
+          var socket = new sp.SpineSocket("root/hip/tail1/tail2/tail3/tail4/tail5/tail6/tail7/tail8/tail9/tail10", this.attachNode);
+          this.skeleton.sockets.push(socket);
+          this.skeleton.sockets = this.skeleton.sockets;
+        };
+
+        _proto.changeAttach = function changeAttach() {
+          if (!this.backSockets) {
+            this.backSockets = this.skeleton.sockets;
+            this.skeleton.sockets = [];
+          } else {
+            this.skeleton.sockets = this.backSockets;
+            this.backSockets = null;
+          }
+        };
+
+        _proto.changeMode = function changeMode() {
+          var isCached = this.skeleton.isAnimationCached();
+
+          if (isCached) {
+            this.skeleton.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.REALTIME);
+            this.modeLabel.string = "realtime";
+            this.attachBtn.interactable = true;
+          } else {
+            this.skeleton.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.SHARED_CACHE);
+            this.modeLabel.string = "cache";
+            this.attachBtn.interactable = false;
+          }
+        };
+
+        return _class3;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class3.prototype, "skeleton", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class3.prototype, "attachNode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class3.prototype, "modeLabel", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class3.prototype, "attachBtn", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class3)) || _class2));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineSkin.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, sp, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      sp = module.sp;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "3f265FzgzJO6pzW2KvpATcO", "SpineSkin", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SpineSkin = exports('SpineSkin', (_dec = ccclass('SpineSkin'), _dec2 = property({
+        type: sp.Skeleton
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SpineSkin, _Component);
+
+        function SpineSkin() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "spine", _descriptor, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "skinId", 0);
+
+          return _this;
+        }
+
+        var _proto = SpineSkin.prototype;
+
+        _proto.start = function start() {// Your initialization goes here.
+        };
+
+        _proto.change = function change() {
+          var skins = ['girl', 'boy', 'girl-blue-cape', 'girl-spring-dress'].map(function (x) {
+            return "full-skins/" + x;
+          });
+          this.skinId = (this.skinId + 1) % skins.length;
+          this.spine.setSkin(skins[this.skinId]);
+        } // update (deltaTime: number) {
+        //     // Your update function goes here.
+        // }
+        ;
+
+        return SpineSkin;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "spine", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineMeshEffect.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, sp, Size, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      sp = module.sp;
+      Size = module.Size;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class2, _class3, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "57b56AV9fFA5brJJCNWOURt", "SpineMeshEffect", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+
+      var _class = exports('default', (_dec = ccclass('SpineMeshEffect'), _dec2 = property({
+        type: sp.Skeleton
+      }), _dec(_class2 = (_class3 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(_class3, _Component);
+
+        function _class3() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "skeleton", _descriptor, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_swirlTime", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_maxEffect", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_index", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_bound", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_swirlEffect", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_jitterEffect", void 0);
+
+          return _this;
+        }
+
+        var _proto = _class3.prototype;
+
+        _proto.start = function start() {
+          this._swirlTime = 0;
+          this._maxEffect = 3;
+          this._index = 0;
+          var skeletonNodeUIProps = this.skeleton.node._uiProps.uiTransformComp;
+          this._bound = new Size(skeletonNodeUIProps.width, skeletonNodeUIProps.height);
+          this._swirlEffect = new sp.VertexEffectDelegate();
+
+          this._swirlEffect.initSwirlWithPowOut(0, 2);
+
+          this._jitterEffect = new sp.VertexEffectDelegate();
+
+          this._jitterEffect.initJitter(20, 20);
+        };
+
+        _proto.switchEffect = function switchEffect() {
+          this._index++;
+
+          if (this._index >= this._maxEffect) {
+            this._index = 0;
+          }
+
+          switch (this._index) {
+            case 0:
+              this.skeleton.setVertexEffectDelegate(null);
+              break;
+
+            case 1:
+              this.skeleton.setVertexEffectDelegate(this._jitterEffect);
+              break;
+
+            case 2:
+              this.skeleton.setVertexEffectDelegate(this._swirlEffect);
+              break;
+          }
+        };
+
+        _proto.update = function update(dt) {
+          if (this._index == 2) {
+            this._swirlTime += dt;
+            var percent = this._swirlTime % 2;
+            if (percent > 1) percent = 1 - (percent - 1);
+            var bound = this._bound;
+
+            var swirlEffect = this._swirlEffect.getSwirlVertexEffect();
+
+            swirlEffect.angle = 360 * percent;
+            swirlEffect.centerX = bound.width * 0.5;
+            swirlEffect.centerY = bound.height * 0.5;
+            swirlEffect.radius = percent * Math.sqrt(bound.width * bound.width + bound.height * bound.height);
+          }
+        };
+
+        return _class3;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class3.prototype, "skeleton", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class3)) || _class2));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineBoyCtrl.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, _defineProperty, _assertThisInitialized, cclegacy, _decorator, Component;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+      _defineProperty = module.defineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class, _temp;
+
+      cclegacy._RF.push({}, "63fd6NWWQxCt6fDTJtglY8d", "SpineBoyCtrl", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SpineBoyCtrl = exports('default', (_dec = ccclass('SpineBoyCtrl'), _dec(_class = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SpineBoyCtrl, _Component);
+
+        function SpineBoyCtrl() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _defineProperty(_assertThisInitialized(_this), "mixTime", 0.2);
+
+          _defineProperty(_assertThisInitialized(_this), "spine", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_hasStop", true);
+
+          return _this;
+        }
+
+        var _proto = SpineBoyCtrl.prototype;
+
+        _proto.onLoad = function onLoad() {
+          var _this2 = this;
+
+          var spine = this.spine = this.getComponent('sp.Skeleton');
+
+          this._setMix('walk', 'run');
+
+          this._setMix('run', 'jump');
+
+          this._setMix('walk', 'jump');
+
+          spine.setStartListener(function (trackEntry) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            console.log("[track %s][animation %s] start.", trackEntry.trackIndex, animationName);
+          });
+          spine.setInterruptListener(function (trackEntry) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            console.log("[track %s][animation %s] interrupt.", trackEntry.trackIndex, animationName);
+          });
+          spine.setEndListener(function (trackEntry) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            console.log("[track %s][animation %s] end.", trackEntry.trackIndex, animationName);
+          });
+          spine.setDisposeListener(function (trackEntry) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            console.log("[track %s][animation %s] will be disposed.", trackEntry.trackIndex, animationName);
+          });
+          spine.setCompleteListener(function (trackEntry) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+
+            if (animationName === 'shoot') {
+              _this2.spine.clearTrack(1);
+            }
+
+            var loopCount = Math.floor(trackEntry.trackTime / trackEntry.animationEnd);
+            console.log("[track %s][animation %s] complete: %s", trackEntry.trackIndex, animationName, loopCount);
+          });
+          spine.setEventListener(function (trackEntry, event) {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            console.log("[track %s][animation %s] event: %s, %s, %s, %s", trackEntry.trackIndex, animationName, event.data.name, event.intValue, event.floatValue, event.stringValue);
+          });
+          this._hasStop = false;
+        } // OPTIONS
+        ;
+
+        _proto.toggleDebugSlots = function toggleDebugSlots() {
+          var _this$spine;
+
+          this.spine.debugSlots = !((_this$spine = this.spine) === null || _this$spine === void 0 ? void 0 : _this$spine.debugSlots);
+        };
+
+        _proto.toggleDebugBones = function toggleDebugBones() {
+          var _this$spine2;
+
+          this.spine.debugBones = !((_this$spine2 = this.spine) === null || _this$spine2 === void 0 ? void 0 : _this$spine2.debugBones);
+        };
+
+        _proto.toggleDebugMesh = function toggleDebugMesh() {
+          var _this$spine3;
+
+          this.spine.debugMesh = !((_this$spine3 = this.spine) === null || _this$spine3 === void 0 ? void 0 : _this$spine3.debugMesh);
+        };
+
+        _proto.toggleUseTint = function toggleUseTint() {
+          var _this$spine4;
+
+          this.spine.useTint = !((_this$spine4 = this.spine) === null || _this$spine4 === void 0 ? void 0 : _this$spine4.useTint);
+        };
+
+        _proto.toggleTimeScale = function toggleTimeScale() {
+          if (this.spine.timeScale === 1.0) {
+            this.spine.timeScale = 0.3;
+          } else {
+            this.spine.timeScale = 1.0;
+          }
+        } // ANIMATIONS
+        ;
+
+        _proto.stop = function stop() {
+          var _this$spine5;
+
+          (_this$spine5 = this.spine) === null || _this$spine5 === void 0 ? void 0 : _this$spine5.clearTrack(0);
+          this._hasStop = true;
+        };
+
+        _proto.walk = function walk() {
+          var _this$spine7;
+
+          if (this._hasStop) {
+            var _this$spine6;
+
+            (_this$spine6 = this.spine) === null || _this$spine6 === void 0 ? void 0 : _this$spine6.setToSetupPose();
+          }
+
+          (_this$spine7 = this.spine) === null || _this$spine7 === void 0 ? void 0 : _this$spine7.setAnimation(0, 'walk', true);
+          this._hasStop = false;
+        };
+
+        _proto.run = function run() {
+          var _this$spine9;
+
+          if (this._hasStop) {
+            var _this$spine8;
+
+            (_this$spine8 = this.spine) === null || _this$spine8 === void 0 ? void 0 : _this$spine8.setToSetupPose();
+          }
+
+          (_this$spine9 = this.spine) === null || _this$spine9 === void 0 ? void 0 : _this$spine9.setAnimation(0, 'run', true);
+          this._hasStop = false;
+        };
+
+        _proto.jump = function jump() {
+          var _this$spine11;
+
+          if (this._hasStop) {
+            var _this$spine10;
+
+            (_this$spine10 = this.spine) === null || _this$spine10 === void 0 ? void 0 : _this$spine10.setToSetupPose();
+          }
+
+          (_this$spine11 = this.spine) === null || _this$spine11 === void 0 ? void 0 : _this$spine11.setAnimation(0, 'jump', true);
+          this._hasStop = false;
+        };
+
+        _proto.shoot = function shoot() {
+          var _this$spine12;
+
+          (_this$spine12 = this.spine) === null || _this$spine12 === void 0 ? void 0 : _this$spine12.setAnimation(1, 'shoot', false);
+        };
+
+        _proto.idle = function idle() {
+          var _this$spine13, _this$spine14;
+
+          (_this$spine13 = this.spine) === null || _this$spine13 === void 0 ? void 0 : _this$spine13.setToSetupPose();
+          (_this$spine14 = this.spine) === null || _this$spine14 === void 0 ? void 0 : _this$spine14.setAnimation(0, 'idle', true);
+        };
+
+        _proto.portal = function portal() {
+          var _this$spine15, _this$spine16;
+
+          (_this$spine15 = this.spine) === null || _this$spine15 === void 0 ? void 0 : _this$spine15.setToSetupPose();
+          (_this$spine16 = this.spine) === null || _this$spine16 === void 0 ? void 0 : _this$spine16.setAnimation(0, 'portal', false);
+        } //
+        ;
+
+        _proto._setMix = function _setMix(anim1, anim2) {
+          var _this$spine17, _this$spine18;
+
+          (_this$spine17 = this.spine) === null || _this$spine17 === void 0 ? void 0 : _this$spine17.setMix(anim1, anim2, this.mixTime);
+          (_this$spine18 = this.spine) === null || _this$spine18 === void 0 ? void 0 : _this$spine18.setMix(anim2, anim1, this.mixTime);
+        };
+
+        return SpineBoyCtrl;
+      }(Component), _temp)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineSkin-single.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, sp, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      sp = module.sp;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "7e308Jc1K9G350X533SJ0Y1", "SpineSkin-single", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SpineSkin = exports('SpineSkin', (_dec = ccclass('SpineSkin-single'), _dec2 = property({
+        type: sp.Skeleton
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SpineSkin, _Component);
+
+        function SpineSkin() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "spine", _descriptor, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "skinId", 0);
+
+          return _this;
+        }
+
+        var _proto = SpineSkin.prototype;
+
+        _proto.start = function start() {// Your initialization goes here.
+        };
+
+        _proto.change = function change() {
+          // const skins =['girl', 'boy', 'girl-blue-cape', 'girl-spring-dress'].map(x=> `full-skins/${x}`);
+          var skins = this.spine.skeletonData.skeletonJson.skins;
+          console.log(skins);
+          this.skinId = (this.skinId + 1) % skins.length;
+          console.log(skins[this.skinId].name);
+          this.spine.setSkin(skins[this.skinId].name);
+        } // update (deltaTime: number) {
+        //     // Your update function goes here.
+        // }
+        ;
+
+        return SpineSkin;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "spine", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineSkin-anim.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, sp, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      sp = module.sp;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "84eb3Re2ltJOKveY+6MrNqB", "SpineSkin-anim", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SpineSkin = exports('SpineSkin', (_dec = ccclass('SpineSkin-anim'), _dec2 = property({
+        type: sp.Skeleton
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SpineSkin, _Component);
+
+        function SpineSkin() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "spine", _descriptor, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "animID", 0);
+
+          return _this;
+        }
+
+        var _proto = SpineSkin.prototype;
+
+        _proto.start = function start() {// Your initialization goes here.
+        };
+
+        _proto.change = function change() {
+          var anim = ['aware', 'blink', 'dance', 'dress-up', 'idle', 'walk']; // const anim =this.spine.skeletonData.skeletonJson;
+
+          this.animID = (this.animID + 1) % anim.length; // console.log(anim);
+          // console.log(anim.length);
+          // console.log(this.animID);
+          // // this.spine!.setSkin(anim[this.animId]);
+
+          this.spine.setAnimation(0, anim[this.animID], true);
+        } // update (deltaTime: number) {
+        //     // Your update function goes here.
+        // }
+        ;
+
+        return SpineSkin;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "spine", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LoadSpine.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, loader, sp, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      loader = module.loader;
+      sp = module.sp;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "c17afOJ5PBHxIigUOVBfvPh", "LoadSpine", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var LoadSpine = exports('LoadSpine', (_dec = ccclass('LoadSpine'), _dec2 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LoadSpine, _Component);
+
+        function LoadSpine() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tips", _descriptor, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = LoadSpine.prototype;
+
+        _proto.start = function start() {
+          var _this2 = this; // Your initialization goes here.
+
+
+          loader.loadRes("spine/alien/alien-pro", sp.SkeletonData, function (err, spineAsset) {
+            if (err) {
+              _this2.tips.string = "Failed to load asset";
+              return;
+            }
+
+            var comp = _this2.getComponent('sp.Skeleton');
+
+            comp.skeletonData = spineAsset;
+            var ani = comp.setAnimation(0, 'run', true);
+            _this2.tips.string = 'Load Success';
+          });
+        } // update (deltaTime: number) {
+        //     // Your update function goes here.
+        // }
+        ;
+
+        return LoadSpine;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "tips", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SpineCollider.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, _defineProperty, _assertThisInitialized, cclegacy, _decorator, PhysicsSystem2D, Contact2DType, EPhysics2DDrawFlags, Sprite, Color, Component;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+      _defineProperty = module.defineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      PhysicsSystem2D = module.PhysicsSystem2D;
+      Contact2DType = module.Contact2DType;
+      EPhysics2DDrawFlags = module.EPhysics2DDrawFlags;
+      Sprite = module.Sprite;
+      Color = module.Color;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class, _temp;
+
+      cclegacy._RF.push({}, "dc74fi10upIPZ9ydQe0eazG", "SpineCollider", undefined);
+
+      var ccclass = _decorator.ccclass;
+      var SpineCollider = exports('SpineCollider', (_dec = ccclass('SpineCollider'), _dec(_class = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SpineCollider, _Component);
+
+        function SpineCollider() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _defineProperty(_assertThisInitialized(_this), "touchingCountMap", new Map());
+
+          _defineProperty(_assertThisInitialized(_this), "debugDrawFlags", 0);
+
+          return _this;
+        }
+
+        var _proto = SpineCollider.prototype;
+
+        _proto.start = function start() {
+          // Your initialization goes here.
+          PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
+          PhysicsSystem2D.instance.on(Contact2DType.END_CONTACT, this.onEndContact, this);
+          this.debugDrawFlags = PhysicsSystem2D.instance.debugDrawFlags;
+        };
+
+        _proto.onEnable = function onEnable() {
+          PhysicsSystem2D.instance.debugDrawFlags = this.debugDrawFlags | EPhysics2DDrawFlags.Shape;
+        };
+
+        _proto.onDisable = function onDisable() {
+          PhysicsSystem2D.instance.debugDrawFlags = this.debugDrawFlags;
+        };
+
+        _proto.addContact = function addContact(c) {
+          var count = this.touchingCountMap.get(c.node) || 0;
+          this.touchingCountMap.set(c.node, ++count);
+          var sprite = c.getComponent(Sprite);
+
+          if (sprite) {
+            sprite.color = Color.RED;
+          }
+        };
+
+        _proto.removeContact = function removeContact(c) {
+          var count = this.touchingCountMap.get(c.node) || 0;
+          --count;
+
+          if (count <= 0) {
+            this.touchingCountMap["delete"](c.node);
+            var sprite = c.getComponent(Sprite);
+
+            if (sprite) {
+              sprite.color = Color.WHITE;
+            }
+          } else {
+            this.touchingCountMap.set(c.node, count);
+          }
+        };
+
+        _proto.onBeginContact = function onBeginContact(a, b) {
+          this.addContact(a);
+          this.addContact(b);
+        };
+
+        _proto.onEndContact = function onEndContact(a, b) {
+          this.removeContact(a);
+          this.removeContact(b);
+        };
+
+        return SpineCollider;
+      }(Component), _temp)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/main", ['./SpineAttach.ts', './SpineSkin.ts', './SpineMeshEffect.ts', './SpineBoyCtrl.ts', './SpineSkin-single.ts', './SpineSkin-anim.ts', './LoadSpine.ts', './SpineCollider.ts'], function () {
+  'use strict';
+
+  return {
+    setters: [null, null, null, null, null, null, null, null],
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/main', 'chunks:///_virtual/main'); 

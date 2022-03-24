@@ -1,1 +1,62 @@
-{"importBase":"import","nativeBase":"native","name":"main","deps":[],"uuids":["0229d285c","09baddc65","0ae7626ca","bcXRK2m4xGaZ4SuCKoP3Gx","20g1ukYUVPvKWKBRznAKo+","20g1ukYUVPvKWKBRznAKo+@6c48a","20g1ukYUVPvKWKBRznAKo+@f9941","54TknWPwVPqJqeCR+Y/Czo","54TknWPwVPqJqeCR+Y/Czo@6c48a","54TknWPwVPqJqeCR+Y/Czo@f9941","565muMi7dO070SZ1ezjHkV","5cgvXCKQFCEYuSrFVrG6Pr","5cgvXCKQFCEYuSrFVrG6Pr@6c48a","95EkngnxZFbYuFpsqVTaFr","95EkngnxZFbYuFpsqVTaFr@6c48a","95EkngnxZFbYuFpsqVTaFr@f9941","fdjsU2o1RKF5x0TziDw3jI"],"paths":{"16":["db:/internal/default_renderpipeline/builtin-forward",0]},"scenes":{"db://assets/cases/spine/SpineSkin.scene":3},"packs":{"0ae7626ca":["11","7","4","13"],"09baddc65":["6","9","10","15","3"],"0229d285c":["12","8","5","14"]},"versions":{"import":[],"native":[]},"redirect":[],"debug":false,"extensionMap":{},"types":["cc.RenderPipeline"]}
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "main",
+    "deps": [],
+    "uuids": [
+        "0229d285c",
+        "09baddc65",
+        "0ae7626ca",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@6c48a",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@6c48a",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "56e66b8c-8bb7-4ed3-bd12-6757b38c7915",
+        "5c82f5c2-2901-4211-8b92-ac556b1ba3eb",
+        "5c82f5c2-2901-4211-8b92-ac556b1ba3eb@6c48a",
+        "951249e0-9f16-456d-8b85-a6ca954da16b",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@6c48a",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "bc5d12b6-9b8c-4669-9e12-b822a83f71b1",
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+    ],
+    "paths": {
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8": [
+            "db:/internal/default_renderpipeline/builtin-forward",
+            "cc.RenderPipeline"
+        ]
+    },
+    "scenes": {
+        "db://assets/cases/spine/SpineSkin.scene": "bc5d12b6-9b8c-4669-9e12-b822a83f71b1"
+    },
+    "packs": {
+        "0ae7626ca": [
+            "5c82f5c2-2901-4211-8b92-ac556b1ba3eb",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8",
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e",
+            "951249e0-9f16-456d-8b85-a6ca954da16b"
+        ],
+        "09baddc65": [
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+            "56e66b8c-8bb7-4ed3-bd12-6757b38c7915",
+            "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+            "bc5d12b6-9b8c-4669-9e12-b822a83f71b1"
+        ],
+        "0229d285c": [
+            "5c82f5c2-2901-4211-8b92-ac556b1ba3eb@6c48a",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@6c48a",
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e@6c48a",
+            "951249e0-9f16-456d-8b85-a6ca954da16b@6c48a"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}
