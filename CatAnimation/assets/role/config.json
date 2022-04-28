@@ -1,0 +1,140 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "role",
+    "deps": [],
+    "uuids": [
+        "026fcab56",
+        "0e1a73799",
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0",
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0@6c48a",
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0@f9941",
+        "80f94bbb-c81a-43b4-a989-d32511cd513b",
+        "80f94bbb-c81a-43b4-a989-d32511cd513b@6c48a",
+        "80f94bbb-c81a-43b4-a989-d32511cd513b@f9941",
+        "b2adc991-9299-4e63-8a91-5fde48face8b",
+        "b2adc991-9299-4e63-8a91-5fde48face8b@6c48a",
+        "b2adc991-9299-4e63-8a91-5fde48face8b@f9941",
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59",
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59@6c48a",
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59@f9941",
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a",
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a@6c48a",
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a@f9941",
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c",
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c@6c48a",
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c@f9941"
+    ],
+    "paths": {
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0": [
+            "a_emoji _01",
+            "cc.ImageAsset"
+        ],
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0@6c48a": [
+            "a_emoji _01/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "3bb49cb3-7a9d-451d-8171-975406f9e9b0@f9941": [
+            "a_emoji _01/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59": [
+            "a_emoji_01_02",
+            "cc.ImageAsset"
+        ],
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59@6c48a": [
+            "a_emoji_01_02/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "b2f63073-a85d-497e-8b96-98a3f2b83e59@f9941": [
+            "a_emoji_01_02/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "80f94bbb-c81a-43b4-a989-d32511cd513b": [
+            "a_emoji_01_03",
+            "cc.ImageAsset"
+        ],
+        "80f94bbb-c81a-43b4-a989-d32511cd513b@6c48a": [
+            "a_emoji_01_03/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "80f94bbb-c81a-43b4-a989-d32511cd513b@f9941": [
+            "a_emoji_01_03/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a": [
+            "a_emoji_01_04",
+            "cc.ImageAsset"
+        ],
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a@6c48a": [
+            "a_emoji_01_04/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a@f9941": [
+            "a_emoji_01_04/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "b2adc991-9299-4e63-8a91-5fde48face8b": [
+            "a_hair_01_02",
+            "cc.ImageAsset"
+        ],
+        "b2adc991-9299-4e63-8a91-5fde48face8b@6c48a": [
+            "a_hair_01_02/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "b2adc991-9299-4e63-8a91-5fde48face8b@f9941": [
+            "a_hair_01_02/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c": [
+            "a_hair_01_04",
+            "cc.ImageAsset"
+        ],
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c@6c48a": [
+            "a_hair_01_04/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "d9a0ec09-33c9-4fef-9346-152c7d24f65c@f9941": [
+            "a_hair_01_04/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {
+        "026fcab56": [
+            "3bb49cb3-7a9d-451d-8171-975406f9e9b0",
+            "80f94bbb-c81a-43b4-a989-d32511cd513b",
+            "b2adc991-9299-4e63-8a91-5fde48face8b",
+            "b2f63073-a85d-497e-8b96-98a3f2b83e59",
+            "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a",
+            "d9a0ec09-33c9-4fef-9346-152c7d24f65c"
+        ],
+        "0e1a73799": [
+            "3bb49cb3-7a9d-451d-8171-975406f9e9b0@6c48a",
+            "80f94bbb-c81a-43b4-a989-d32511cd513b@6c48a",
+            "b2adc991-9299-4e63-8a91-5fde48face8b@6c48a",
+            "b2f63073-a85d-497e-8b96-98a3f2b83e59@6c48a",
+            "c097ca98-dfe1-4a5a-aa1b-9f81a2302b0a@6c48a",
+            "d9a0ec09-33c9-4fef-9346-152c7d24f65c@6c48a"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}

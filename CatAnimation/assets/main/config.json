@@ -1,0 +1,62 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "main",
+    "deps": [],
+    "uuids": [
+        "05cf6798c",
+        "0855f14c6",
+        "0b7908a82",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@6c48a",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "33f3e8f9-9b28-4134-877c-f3cf72b4b825",
+        "4e34a1a3-af3e-46ae-8b4f-994551c58118",
+        "4e34a1a3-af3e-46ae-8b4f-994551c58118@6c48a",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@6c48a",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@6c48a",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "dcf8f6e5-98b6-4669-ad4d-a92ece420280",
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+    ],
+    "paths": {
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8": [
+            "db:/internal/default_renderpipeline/builtin-forward",
+            "cc.RenderPipeline"
+        ]
+    },
+    "scenes": {
+        "db://assets/cases/spine/test/scene/SpineAnim.scene": "dcf8f6e5-98b6-4669-ad4d-a92ece420280"
+    },
+    "packs": {
+        "05cf6798c": [
+            "4e34a1a3-af3e-46ae-8b4f-994551c58118",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8",
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e",
+            "951249e0-9f16-456d-8b85-a6ca954da16b"
+        ],
+        "0855f14c6": [
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+            "33f3e8f9-9b28-4134-877c-f3cf72b4b825",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+            "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+            "dcf8f6e5-98b6-4669-ad4d-a92ece420280"
+        ],
+        "0b7908a82": [
+            "4e34a1a3-af3e-46ae-8b4f-994551c58118@6c48a",
+            "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@6c48a",
+            "20835ba4-6145-4fbc-a58a-051ce700aa3e@6c48a",
+            "951249e0-9f16-456d-8b85-a6ca954da16b@6c48a"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}
