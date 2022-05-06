@@ -1,1 +1,14 @@
-System.register(["./instantiated-bca504ea.js"],(function(t){"use strict";return{setters:[function(e){t("default",e.hw)}],execute:function(){}}}));
+System.register(['./instantiated-d358df90.js'], function (exports) {
+	'use strict';
+	return {
+		setters: [function (module) {
+			exports('default', module.hw);
+		}],
+		execute: function () {
+
+
+
+		}
+	};
+});
+//# sourceMappingURL=wait-for-ammo-instantiation.js.map
