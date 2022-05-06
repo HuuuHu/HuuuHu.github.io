@@ -24,4 +24,3 @@ System.register("chunks:///_virtual/main", [], function () {
     };
     });
 });
-//# sourceMappingURL=index.js.map

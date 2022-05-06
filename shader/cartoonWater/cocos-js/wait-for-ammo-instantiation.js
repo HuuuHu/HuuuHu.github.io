@@ -11,4 +11,3 @@ System.register(['./instantiated-d358df90.js'], function (exports) {
 		}
 	};
 });
-//# sourceMappingURL=wait-for-ammo-instantiation.js.map

@@ -14,4 +14,3 @@ System.register(['./_commonjsHelpers-364bf34e.js'], function (exports) {
 		}
 	};
 });
-//# sourceMappingURL=bullet.cocos-6aef4097.js.map

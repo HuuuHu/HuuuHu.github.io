@@ -8,4 +8,3 @@ System.register([], function (exports, module) {
 		}
 	};
 });
-//# sourceMappingURL=bullet.wasm-5bd5c215.js.map
