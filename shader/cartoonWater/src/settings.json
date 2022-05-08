@@ -62,5 +62,7 @@
             "restitution": 0.1
         }
     },
-    "scriptPackages": []
+    "scriptPackages": [
+        "./src/chunks/bundle.js"
+    ]
 }
