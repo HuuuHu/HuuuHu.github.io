@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Guess the number</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900');
+
+    body{
+      background-color: #F8DD74;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: #4FC5B5;
+      margin: 0;
+    }
+
+    .wrapper{
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 90%;
+    }
+
+    .relativePosition{
+      position: relative;
+      margin: 0;
+    }
+
+    h1{
+      font-size: 6em;
+      width: 50vw;
+      max-width: 700px;
+      line-height: 1em;
+    }
+
+    h2{
+      padding-top: 30px;
+      font-size: 2em;
+      width: 65vw;
+      max-width: 800px;
+    }
+
+    .userField{
+      background: #FFFFFF;
+      border-radius: 5px;
+      height: 38px;
+      padding: 0;
+      border: none;
+      transition: 0.2s;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .userField:focus{
+      outline: none;
+    }
+
+    .guessField{
+      margin-top: 65px;
+      padding-left: 10px;
+      width: 15em;
+      float: left;
+    }
+
+    .submit{
+      background-color: #4FC5B5;
+      margin-top: 20px;
+      padding-left: 0;
+      width: 6em;
+      color: white;
+    }
+
+    .submitHover:hover{
+      background-color: #3f9f92;
+    }
+
+    .submitHover:active{
+      background-color: #338378;
+    }
+
+    .form{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .textFieldGrid{
+      display: grid;
+      grid-template-columns: 18em 12em;
+    }
+
+    .guessMessageWrapper{
+      display: none;
+      position: relative;
+      border-radius: 5px;
+      height: 38px;
+      margin-top: 65px;
+      float: left;
+      background-color: transparent;
+    }
+
+    .tiltedSquare{
+      position: absolute;
+      top: 50%;
+      transform: translate(-6px, -50%) rotate(45deg);
+      background: #FF5B5B;
+      height: 24px;
+      width: 24px;
+      border-radius: 5px;
+      z-index: -1;
+    }
+
+    .lowOrHi{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      margin: 0;
+      padding-left: 15px;
+      color: rgb(255, 235, 235);
+    }
+
+    .wrong{
+      background: #FF5B5B;
+    }
+
+    .right{
+      background: #669D4C;
+    }
+
+    .lastResult{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+      padding-left: 15px;
+      color: #dcffcb;
+    }
+
+    .shake{
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    .restart{
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+    }
+
+    .setRange{
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+    }
+
+    .min{
+      width: 60px;
+      position: absolute;
+      cursor: pointer;
+      top: 60px;
+      right: 0;
+      text-align: center;
+    }
+
+    .max{
+      width: 60px;
+      position: absolute;
+      cursor: pointer;
+      top: 100px;
+      right: 0;
+      text-align: center;
+    }
+
+
+    @keyframes shake {
+      10%, 90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+
+        20%, 80% {
+          transform: translate3d(2px, 0, 0);
+        }
+
+        30%, 50%, 70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+
+        40%, 60% {
+          transform: translate3d(4px, 0, 0);
+        }
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <h1 class="relativePosition"> 猜数字</h1>
+
+      <div>
+        <!-- <input id="restart" type="submit" class="submit restart relativePosition userField submitHover" value="重置"> -->
+        <input id="setRange" type="submit" class="submit setRange relativePosition userField submitHover" value="设置范围">
+        <div>
+          <input type="text" id="min" hidden="hidden" class="min relativePosition userField" placeholder="最小值" value="1">
+          <input type="text" id="max" hidden="hidden" class="max relativePosition userField" placeholder="最大值" value="100">
+        </div>
+      </div>
+
+      <h2 id="rangeTip" class="relativePosition">在 1 ~ 100 内猜数字</h2>
+      <h2 class="relativePosition">每猜一次范围缩小，最后猜中的人可自点专享菜品一份（50元以内）</h2>
+      
+      <div class="form">
+        <div class="textFieldGrid">
+          <input type="text" id="guessField" class="guessField relativePosition userField" placeholder="请输入数字">
+          <div class="guessMessageWrapper wrong">
+            <div class="tiltedSquare"></div>
+            <p class="lowOrHi"></p>
+            <p class="lastResult"></p>
+          </div>
+        </div>
+        <div id="buttonsWrapper">
+          <input id="submitButton" type="submit" class="guessSubmit submit relativePosition userField submitHover" value="提 交">
+        </div>
+      </div>
+      
+
+        <p class="guesses"></p>
+
+
+    </div>
+
+    <!-- <script src="js/js.js"></script> -->
+    <script>
+      var minSet = 1;
+      var maxSet = 100;
+
+      var randomNumber = Number(minSet) + Math.floor(Math.random() * (maxSet - minSet +1));
+      console.log(randomNumber);
+
+      var min = minSet;
+      var max = maxSet;
+
+      var rangeTip = document.querySelector(' #rangeTip');
+      var guesses = document.querySelector(' .guesses');
+      var lastResult = document.querySelector(' .lastResult');
+      var lowOrHi = document.querySelector(' .lowOrHi');
+      var guessMessageWrapper = document.querySelector('.guessMessageWrapper')
+      var tiltedSquare = document.querySelector('.tiltedSquare')
+      var shake = document.querySelector('.shake')
+
+      var guessSubmit = document.querySelector(' .guessSubmit');
+      var guessField = document.querySelector(' .guessField');
+
+
+      guessSubmit.addEventListener('click', checkGuess);
+
+      console.log(guessField.value);
+
+      // var restart = document.querySelector(' .restart');
+      // restart.addEventListener('click', resetGame);
+
+      var setRange = document.querySelector(' .setRange');
+      var minNum = document.querySelector(' .min');
+      var maxNum = document.querySelector(' .max');
+      setRange.addEventListener('click', setNumberRange);
+
+      var guessCount = 1;
+      var resetButton;
+
+      function checkGuess() {
+        var userGuess = Number(guessField.value);
+        guessMessageWrapper.style.display = 'block';
+        // if (guessCount === 1 ) {
+        //   guesses.textContent = '数字范围: ';
+        // }
+        // guesses.textContent += userGuess + ' ';
+
+        if (userGuess === randomNumber) {
+          lastResult.textContent = ' 恭喜! 你猜对了!';
+          lastResult.style.backgroundColour = 'green';
+          lowOrHi.textContent = ' ';
+          guessMessageWrapper.classList.add('right');
+          tiltedSquare.classList.add('right');
+          setGameOver();
+          // } else if (guessCount === 10){
+          //   lastResult.textContent = '!!!Game Over!!!'
+          //   lastResult.style.color = 'white'
+          //   lowOrHi.textContent = '';
+          //   setGameOver();
+        } else if (userGuess < min || userGuess > max) {
+          lowOrHi.textContent = ' 请输入范围内的数字! ';
+          shakeFuntion()
+          return;
+        } else {
+          /*
+          lastResult.textContent = 'Wrong!';
+          lastResult.style.backgroundColour = 'red';
+          */
+          if (userGuess < randomNumber) {
+            lowOrHi.textContent = ' 猜 得 太 小 了 ! ';
+            min = userGuess;
+            // guesses.textContent += userGuess + '(↓)  ';
+            guesses.textContent = '数字范围: ' + (min+1) + ' ~ ' + max;
+            shakeFuntion()
+
+          } else if (userGuess > randomNumber) {
+            lowOrHi.textContent = ' 猜 得 太 大 了 ! ';
+            max = userGuess;
+            // guesses.textContent += userGuess + '(↑)  ';
+            guesses.textContent = '数字范围: ' + min + ' ~ ' + (max-1);
+            shakeFuntion()
+          }
+          //guesses.textContent = '数字范围: ' + min + ' ~ ' + max;
+
+        }
+
+        guessCount++;
+        guessField.value = '';
+        guessField.focus();
+      }
+
+      function shakeFuntion() {
+        // restart animation
+        guessMessageWrapper.classList.add('shake');
+        setTimeout(function () {
+          guessMessageWrapper.classList.remove('shake');
+        }, 820);
+      }
+
+
+      function setGameOver() {
+
+        guessField.disabled = true;
+        guessSubmit.disabled = true;
+        resetButton = document.createElement('button');
+        resetButton.className = 'submit relativePosition userField submitHover';
+        var submitButton = document.getElementById('submitButton');
+        submitButton.classList.remove('submitHover');
+        resetButton.textContent = '重开';
+        document.body.appendChild(resetButton);
+        resetButton.addEventListener('click', resetGame)
+
+        var buttonsWrapper = document.getElementById('buttonsWrapper');
+        buttonsWrapper.appendChild(resetButton);
+
+      }
+
+      function resetGame() {
+        guessCount = 1;
+
+        var resetParas = document.querySelectorAll('.resultParas p');
+        for (var i = 0; i < resetParas.length; i++) {
+          resetParas[1].textContent = '';
+        }
+
+        if (resetButton) {
+          
+          resetButton.parentNode.removeChild(resetButton);
+          resetButton = '';
+        }
+
+        guessSubmit.className = 'submit relativePosition userField submitHover';
+        guessMessageWrapper.style.display = 'none';
+        guessMessageWrapper.classList.remove('right');
+        tiltedSquare.classList.remove('right');
+        lastResult.textContent = '';
+
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
+        guessField.focus();
+        guesses.textContent = '';
+
+        lastResult.style.backgroundColour = 'white';
+
+        randomNumber = Number(minSet) + Math.floor(Math.random() * (maxSet - minSet +1));
+        console.log(randomNumber);
+        min = minSet;
+        max = maxSet;
+      }
+
+      function setNumberRange() {
+        if (minNum.hasAttribute("hidden")) {
+          // console.log("hidden");
+          minNum.removeAttribute("hidden");
+          maxNum.removeAttribute("hidden");
+        } else {
+          var minN = Number(minNum.value);
+          var maxN = Number(maxNum.value);
+
+          if ((minN || minN == 0) && maxN ) {
+            console.log("输入为数值");
+            
+            if (minN > maxN) {
+              alert("请输入正确的数值范围");
+              return;
+            }
+            
+            minNum.setAttribute("hidden", "hidden");
+            maxNum.setAttribute("hidden", "hidden");
+        
+            minSet = minNum.value;
+            maxSet = maxNum.value;
+            // console.log(minNum.value);
+            // console.log(maxNum.value);
+            // console.log(minSet);
+            // console.log(maxSet);
+            rangeTip.textContent = "在 "+ minSet + " ~ " + maxSet +" 内猜数字";
+            resetGame();
+          } else {
+            alert("最大最小值请输入数值");
+          }
+        }
+      }
+    </script>
+
+  </body>
+</html>
