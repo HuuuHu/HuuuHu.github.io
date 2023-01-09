@@ -149,6 +149,8 @@ function setNumberRange() {
     // console.log("hidden");
     minNum.removeAttribute("hidden");
     maxNum.removeAttribute("hidden");
+    guessField.disabled = true;
+    guessSubmit.disabled = true;
   } else {
     var minN = Number(minNum.value);
     var maxN = Number(maxNum.value);
